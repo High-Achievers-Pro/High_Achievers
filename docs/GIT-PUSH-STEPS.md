@@ -18,20 +18,20 @@ git remote add origin https://github.com/High-Achievers-Pro/High_Achievers.git
 
 ## Push in small increments (by feature)
 
-### Feature 1: Project + Hero
+### Feature 1: Project + initial landing
 
 ```bash
-git add docs/ index.html styles.css .gitignore README.md
-git commit -m "feat: project setup, context docs, hero section and base styles"
+git add docs/ index.html src/ .gitignore README.md
+git commit -m "feat: consulting landing page with src structure"
 git branch -M main
 git push -u origin main
 ```
 
-### Feature 2: Additional sections
+### Feature 2: Content & polish
 
 ```bash
-git add index.html styles.css docs/FEATURES.md
-git commit -m "feat: add About, Features, and CTA sections"
+git add src/ docs/FEATURES.md README.md
+git commit -m "feat: refine services, process, and CTA content"
 git push
 ```
 

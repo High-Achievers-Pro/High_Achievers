@@ -1,112 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>High Achievers</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <a href="#" class="logo">High Achievers</a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#features">Features</a>
-        <a href="#partners">Partners</a>
-        <a href="#cta">Get Started</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-content">
-        <h1>Reach Your Full Potential</h1>
-        <p class="hero-tagline">High Achievers helps you set goals, track progress, and celebrate wins—so you can become the person you're meant to be.</p>
-        <a href="#cta" class="btn btn-primary">Get Started</a>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About High Achievers</h2>
-        <p class="about-lead">We believe everyone has the potential to achieve more. Our platform is designed to help you clarify your goals, build habits, and track progress—so you can become a high achiever in every area of life.</p>
-        <div class="about-grid">
-          <div class="about-card">
-            <span class="about-icon">🎯</span>
-            <h3>Clear Goals</h3>
-            <p>Define what success looks like for you and break it into actionable steps.</p>
-          </div>
-          <div class="about-card">
-            <span class="about-icon">📈</span>
-            <h3>Track Progress</h3>
-            <p>See your growth over time with simple, visual progress tracking.</p>
-          </div>
-          <div class="about-card">
-            <span class="about-icon">🏆</span>
-            <h3>Celebrate Wins</h3>
-            <p>Recognize milestones and stay motivated with built-in rewards.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="features" class="features">
-      <div class="container">
-        <h2>Why Choose Us</h2>
-        <p class="section-tagline">Everything you need to level up—in one place.</p>
-        <ul class="features-list">
-          <li><strong>Smart goal setting</strong> – Set and prioritize goals that matter to you.</li>
-          <li><strong>Daily habits</strong> – Build routines that compound into lasting change.</li>
-          <li><strong>Progress insights</strong> – Understand patterns and improve over time.</li>
-          <li><strong>Community support</strong> – Connect with others on the same journey.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="partners" class="partners">
-      <div class="container">
-        <h2>Teams We Learn From</h2>
-        <p class="section-tagline">Inspired by leading AI and software consultancies.</p>
-        <div class="partners-grid">
-          <a class="partner-card" href="https://addepto.com/" target="_blank" rel="noopener noreferrer">
-            <span class="partner-name">Addepto</span>
-            <span class="partner-site">addepto.com</span>
-          </a>
-          <a class="partner-card" href="https://hatchworks.com/" target="_blank" rel="noopener noreferrer">
-            <span class="partner-name">HatchWorks AI</span>
-            <span class="partner-site">hatchworks.com</span>
-          </a>
-          <a class="partner-card" href="https://www.tensorway.com/" target="_blank" rel="noopener noreferrer">
-            <span class="partner-name">Tensorway</span>
-            <span class="partner-site">tensorway.com</span>
-          </a>
-          <a class="partner-card" href="https://www.thoughtworks.com/" target="_blank" rel="noopener noreferrer">
-            <span class="partner-name">Thoughtworks</span>
-            <span class="partner-site">thoughtworks.com</span>
-          </a>
-          <a class="partner-card" href="https://www.bluelabellabs.com/" target="_blank" rel="noopener noreferrer">
-            <span class="partner-name">Blue Label Labs</span>
-            <span class="partner-site">bluelabellabs.com</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="cta" class="cta">
-      <div class="container cta-content">
-        <h2>Start Your Journey Today</h2>
-        <p>Join High Achievers and take the first step toward the life you want.</p>
-        <a href="#" class="btn btn-primary">Get Started Free</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; High Achievers. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High Achievers</title>
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <script defer src="./src/js/main.js"></script>
+  </head>
+  <body>
+    <!-- Source of truth lives in ./src/index.html -->
+    <noscript>This site works best with JavaScript enabled.</noscript>
+    <!-- Keep a single entry point so local servers serve /index.html at root -->
+    <main id="app"></main>
+    <script>
+      // Simple include-style load: render the src HTML into #app for now.
+      // (This keeps a scalable /src structure without needing a bundler yet.)
+      fetch("./src/index.html")
+        .then((r) => r.text())
+        .then((html) => {
+          const doc = new DOMParser().parseFromString(html, "text/html");
+          const body = doc.body;
+          document.querySelector("#app").replaceWith(...body.childNodes);
+          window.dispatchEvent(new Event("ha:ready"));
+        })
+        .catch(() => {
+          document.body.innerHTML =
+            "<p style='color:white;font-family:system-ui;padding:24px'>Could not load app. Run a local server (not file://).</p>";
+        });
+    </script>
+  </body>
 </html>

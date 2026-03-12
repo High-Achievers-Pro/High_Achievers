@@ -1,18 +1,19 @@
 # High Achievers
 
-Landing page for **High Achievers** — reach your full potential with clear goals, progress tracking, and community support.
+Landing page for **High Achievers** — an AI consulting and delivery studio focused on practical AI systems (agents, RAG, chatbots) integrated into real workflows.
 
 ## Sections
 
-- **Hero** – Headline and primary CTA
-- **About** – Mission and three value cards (Goals, Progress, Wins)
-- **Features** – “Why Choose Us” list
-- **CTA** – Final call-to-action
+- **Hero** – Clear positioning + CTA + “What we deliver” panel
+- **Services** – AI consulting, agent workflows, RAG, chatbots
+- **Process** – Discovery → Pilot → Production
+- **Partners** – Reference list from the sheet
+- **CTA** – Contact
 - **Footer** – Copyright
 
 ## Run locally
 
-Open `index.html` in a browser, or use a simple server:
+Run a simple local server (recommended; `file://` will block `fetch()`):
 
 ```bash
 # Python 3
@@ -20,6 +21,14 @@ python3 -m http.server 8000
 
 # Then visit http://localhost:8000
 ```
+
+## Project structure
+
+- `index.html` – root entry (loads `src/index.html`)
+- `src/index.html` – page markup (header/sections/footer)
+- `src/styles/main.css` – styling
+- `src/js/main.js` – reveal + active-nav behavior
+- `src/assets/` – images/icons (logo)
 
 ## Context
 

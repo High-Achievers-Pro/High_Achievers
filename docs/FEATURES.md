@@ -4,14 +4,17 @@
 
 | # | Feature | Status | Git commit / notes |
 |---|---------|--------|-------------------|
-| 1 | Project setup + Hero section (HTML, CSS, base layout) | Done | |
-| 2 | About section | Done | |
-| 3 | Features/Services section | Done | |
-| 4 | CTA section | Done | |
-| 5 | Footer | Done | |
+| 1 | Project setup (docs, base landing) | Done | |
+| 2 | Scalable structure (`src/` layout) | In progress | |
+| 3 | Consulting landing redesign (logo, smooth sections, services, process) | In progress | |
+| 4 | Contact/CTA + footer polish | Pending | |
+| 5 | Optional: Vite/React upgrade for growth | Pending | |
 
 ## Completed
 - Context docs (`docs/CONTEXT.md`, `docs/FEATURES.md`)
-- Hero + header + footer
-- About (3 cards), Features list, CTA section
-- Appealing dark theme with accent color (deep blue/pink gradient)
+- Initial multi-section landing page
+
+## In progress
+- `src/` structure + migrated styles (`src/styles/main.css`)
+- New consulting-oriented content (Services, Process, Partners)
+- Logo (`src/assets/logo.svg`) and smooth reveal animations (`src/js/main.js`)
